@@ -19,6 +19,35 @@ class Welcome extends CI_Controller {
 		$this->load->view('sobre');
 	}
 	
+	public function admin()
+	{
+		$this->load->view('admin');
+	}
+	
+	public function semaut()
+	{
+		$this->load->view('semaut');
+	}
+	
+	public function fale(){
+		$this->load->view('fale');
+	}
+	
+	public function news(){
+		$this->load->view('news');
+	}
+	
+	public function formlogin(){
+		$this->load->view('formlogin');
+	}
+	
+	public function cadastro(){
+		$this->load->view('cadastro');
+	}
+	public function noticia(){
+		$this->load->view('noticia');
+	}
+	
 	// index.php/welcome/doPost
 	public function doPost(){
 		// controller enxergar o model
@@ -30,7 +59,30 @@ class Welcome extends CI_Controller {
 		// "nome" eh o nome do campo do formulario que estou extraindo a informacao para gravar no banco
 		$m->insert(new Usuario($_POST["nome"], $_POST["email"], $_POST["mensagem"])); // new Usuario eh a classe Usuario de user.php
 	}
+	// index.php/welcome/doPost
 	
+	public function insertNews(){
+		// controller enxergar o model
+		// APPPATH onde esta o codeIgnitor
+		require_once APPPATH."models/user.php";
+		$this->load->model('ModelNews');
+		$m = $this->ModelNews;
+		// "nome" eh o nome do campo do formulario que estou extraindo a informacao para gravar no banco
+		$m->insert(new News($_POST["nome"], $_POST["email"], null)); // new Usuario eh a classe Usuario de user.php
+	}
+	
+	public function insertProd(){
+		// controller enxergar o model
+		// APPPATH onde esta o codeIgnitor
+		require_once APPPATH."models/user.php";
+		$this->load->model('ModelProd');
+		$m = $this->ModelProd;
+		// "nome" eh o nome do campo do formulario que estou extraindo a informacao para gravar no banco
+		$m->insert(new produt($_POST["titulo"], $_POST["noticia"], $_POST["autor"])); // new Usuario eh a classe Usuario de user.php
+	}
+	
+	
+
 	// index.php/welcome/listar
 	public function listar(){
 		require_once APPPATH."models/user.php";
@@ -44,9 +96,22 @@ class Welcome extends CI_Controller {
 		$this->load->view("lista", $data);
 	}
 	
-	
-	public function fale(){
-		$this->load->view('fale');
+	public function listarNews(){
+		//require_once APPPATH."models/ModelNews.php";
+		$this->load->model('ModelNews');
+		$m = $this->ModelNews;
+		$news = $m->searchAll();
+		$data['news'] = $news; 
+		$this->load->view("listaNews", $data);
 	}
-			
+	
+	public function listarNot(){
+		require_once APPPATH."models/user.php";
+		$this->load->model('ModelProd');
+		$m = $this->ModelProd;
+		$produt = $m->searchAll();
+		$data['produt'] = $produt; 
+		$this->load->view("noticia", $data);
+	}
+	
 }

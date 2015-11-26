@@ -6,7 +6,7 @@
 	http://bootstrapdesigntools.com/tools/bootstrap-menu-builder/
 	meu^^-->
   <meta charset="UTF-8">
-  <title>Listar</title>
+  <title>ListarNews</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -40,18 +40,19 @@
                 </li>
                 <li><a href=<?php echo base_url();?>index.php/welcome/fale>Fale conosco</a>
                 </li>
+                
             </ul>
         </div>
     </div>
 </div>
     <div class="container">
     <div id="contact">
-    <h1>Mensagens recebidas</h1>
+    <h1>Emails</h1>
     <?php
         echo "<table " . ">";
-        echo "<tr><td>Nome</td><td>Email</td><td>Mensagem</td></tr>";
-        foreach ($usuarios as $u){
-            echo "<tr><td>". $u->nome . "</td><td>" . $u->email . "</td><td>" . $u->mensagem . "</td></tr>";
+        echo "<tr><td>Nome</td><td>Email</td><td>ID</td></tr>";
+        foreach ($news as $u){
+            echo "<tr><td>". $u->nome . "</td><td>" . $u->email . "</td><td>" . $u->ID . "</td></tr>";
         }
         echo "</table>";
         ?>

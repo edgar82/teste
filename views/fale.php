@@ -18,7 +18,7 @@
 </head>
 
 <body>
-<img src=<?php echo base_url();?>static/img/LOGO.jpg></img>
+<a href=<?php echo base_url();?>index.php/welcome/index><img src= <?php echo base_url();?>static/img/LOGO.jpg></a>
 <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
     <div class="container-fluid">
         <div class="navbar-header"><a class="navbar-brand" href="#"></a>
@@ -33,7 +33,14 @@
                 </li>
                 <li><a href=<?php echo base_url();?>index.php/welcome/sobre>Sobre</a>
                 </li>
+                <li><a href=<?php echo base_url();?>index.php/welcome/news>News</a>
+                </li>
+                <li><a href=<?php echo base_url();?>index.php/welcome/listarNot>Noticias</a>
+                </li>
+                <li><a href=<?php echo base_url();?>index.php/welcome/formlogin>Login</a>
+                </li>
                 <li><a href=<?php echo base_url();?>index.php/welcome/fale>Fale conosco</a>
+                </li>
                 
             </ul>
         </div>

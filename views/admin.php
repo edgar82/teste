@@ -6,7 +6,7 @@
 	http://bootstrapdesigntools.com/tools/bootstrap-menu-builder/
 	meu^^-->
   <meta charset="UTF-8">
-  <title>Listar</title>
+  <title>ADMIN</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -24,37 +24,39 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse navbar-menubuilder">
-            <ul class="nav navbar-nav navbar-left">
-               <li><a href=<?php echo base_url();?>index.php/welcome/index>Home</a>
-                </li>
-                <li><a href=<?php echo base_url();?>index.php/welcome/produtos>Produtos</a>
-                </li>
-                <li><a href=<?php echo base_url();?>index.php/welcome/sobre>Sobre</a>
-                </li>
-                <li><a href=<?php echo base_url();?>index.php/welcome/news>News</a>
-                </li>
-                <li><a href=<?php echo base_url();?>index.php/welcome/listarNot>Noticias</a>
-                </li>
-                <li><a href=<?php echo base_url();?>index.php/welcome/formlogin>Login</a>
-                </li>
-                <li><a href=<?php echo base_url();?>index.php/welcome/fale>Fale conosco</a>
-                </li>
+        <h1>ADIMIN</h1>
+                
             </ul>
         </div>
     </div>
 </div>
     <div class="container">
     <div id="contact">
-    <h1>Mensagens recebidas</h1>
-    <?php
-        echo "<table " . ">";
-        echo "<tr><td>Nome</td><td>Email</td><td>Mensagem</td></tr>";
-        foreach ($usuarios as $u){
-            echo "<tr><td>". $u->nome . "</td><td>" . $u->email . "</td><td>" . $u->mensagem . "</td></tr>";
-        }
-        echo "</table>";
-        ?>
+    adicione uma noticia .
+    <form action="/index.php/Welcome/insertProd" method="POST">
+        <fieldset>
+            <input type="text" id="email" name="titulo" placeholder="titulo" />
+            
+            <label for="name">Noticia:</label>
+            <textarea type="text" id="name" name="noticia" placeholder="Nome"> </textarea>
+           
+            <label for="name">Autor:</label>
+            <input type="text" id="email" name="autor" placeholder="autor" />
+           
+            
+           
+             <input type="submit" onclick="Enviar();" id="enviar" value="Enviar" />
+           
+           
+        </fieldset>
+    </form>
+</div>
+    </div>
+		</form>
+		</div>
+	</div>
+</div>
+
         
     
 </div>

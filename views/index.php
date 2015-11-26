@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<img src= <?php echo base_url();?>static/img/LOGO.jpg>
+<a href=<?php echo base_url();?>index.php/welcome/index><img src= <?php echo base_url();?>static/img/LOGO.jpg></a>
 </img>
 <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
     <div class="container-fluid">
@@ -38,8 +38,14 @@
                 </li>
                 <li><a href=<?php echo base_url();?>index.php/welcome/sobre>Sobre</a>
                 </li>
+                <li><a href=<?php echo base_url();?>index.php/welcome/news>News</a>
+                </li>
+                <li><a href=<?php echo base_url();?>index.php/welcome/listarNot>Noticias</a>
+                </li>
+                <li><a href=<?php echo base_url();?>index.php/welcome/formlogin>Login</a>
+                </li>
                 <li><a href=<?php echo base_url();?>index.php/welcome/fale>Fale conosco</a>
-                
+                </li>
 
             </ul>
         </div>
@@ -64,7 +70,7 @@
         <div id="slideshow-inner">
             <ul>
                 <li id="slide1">
-                    <a href="new.html"><img src=<?php echo base_url();?>static/img/s0.jpg></img></a>
+                    <a href=<?php echo base_url();?>index.php/welcome/news><img src=<?php echo base_url();?>static/img/s0.jpg></img></a>
                     <div class="description">
                         <input type="checkbox" id="show-description-1"/>
                         <label for="show-description-1" class="show-description-label">I</label>
@@ -125,7 +131,8 @@
     <br>
     <br>
     <div class="clearfix"></div>
-
+    
+    
 <div class="row">
 	<div class="col-lg-4 col-sm-6">
 	<h2> </h2>

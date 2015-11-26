@@ -1,17 +1,22 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- caniuse.com 
 	bootStrap menu Builder
 	http://bootstrapdesigntools.com/tools/bootstrap-menu-builder/
 	meu^^-->
   <meta charset="UTF-8">
-  <title>Listar</title>
+  <title>New</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="<?php echo base_url(); ?>static/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <script src="<?php echo base_url(); ?>static/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="<?php echo base_url(); ?>static/css/css-personalizada.css">
 </head>
@@ -24,9 +29,9 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse navbar-menubuilder">
+         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-left">
-               <li><a href=<?php echo base_url();?>index.php/welcome/index>Home</a>
+                <li><a href=<?php echo base_url();?>index.php/welcome/index>Home</a>
                 </li>
                 <li><a href=<?php echo base_url();?>index.php/welcome/produtos>Produtos</a>
                 </li>
@@ -40,30 +45,39 @@
                 </li>
                 <li><a href=<?php echo base_url();?>index.php/welcome/fale>Fale conosco</a>
                 </li>
+
+            
             </ul>
         </div>
     </div>
 </div>
-    <div class="container">
-    <div id="contact">
-    <h1>Mensagens recebidas</h1>
-    <?php
-        echo "<table " . ">";
-        echo "<tr><td>Nome</td><td>Email</td><td>Mensagem</td></tr>";
-        foreach ($usuarios as $u){
-            echo "<tr><td>". $u->nome . "</td><td>" . $u->email . "</td><td>" . $u->mensagem . "</td></tr>";
-        }
-        echo "</table>";
-        ?>
-        
+
     
+  <div class="container">
+    <div id="contact">
+    <h1>newsletter</h1>
+    <form action="/index.php/Welcome/insertNews" method="POST">
+        <fieldset>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="nome" placeholder="Nome" />
+           
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="E-mail" />
+           
+           
+           
+            <input type="submit" value="Enviar" />
+           
+        </fieldset>
+    </form>
 </div>
-    </div> 	
-	<div class="clearfix"></div>
+    </div>  
+  <div class="clearfix"></div>
 
 <footer id="footer">
         <div class="container">
             <div class="text-center">       
+                
                 <p class="text-muted">
                 Copyright ©2015
                 </p>
